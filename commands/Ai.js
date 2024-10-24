@@ -13,7 +13,7 @@ module.exports = {
     }
 
     // Inform the user that content is being generated
-    sendMessage(senderId, { text: 'Generating content... Please wait.' }, pageAccessToken);
+    sendMessage(senderId, { text: 'EN COURS DE TRAITEMENT 📊... PATIENCE📍' }, pageAccessToken);
 
     try {
       const apiUrl = `https://joshweb.click/api/gpt-4o?q=${encodeURIComponent(prompt)}&uid=${senderId}`;
@@ -23,7 +23,7 @@ module.exports = {
       const result = response.data.result;
 
       // Send the generated text to the user with proper concatenation
-      sendMessage(senderId, { text: "LOVELY AI:\n\n" + result }, pageAccessToken);
+      sendMessage(senderId, { text: "👸 LOVELY AI:\n\n" + result }, pageAccessToken);
 
     } catch (error) {
       console.error('Error calling GPT-4o API:', error);
