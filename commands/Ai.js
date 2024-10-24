@@ -13,7 +13,7 @@ module.exports = {
     }
 
     // Inform the user that content is being generated
-    sendMessage(senderId, { text: 'EN COURS D'ANALYSE 📊🕞...' }, pageAccessToken);
+    sendMessage(senderId, { text: 'EN COURS ANALYSE 📊🕞... Patienté' }, pageAccessToken);
 
     try {
       const apiUrl = `https://joshweb.click/api/gpt-4o?q=${encodeURIComponent(prompt)}&uid=${senderId}`;
