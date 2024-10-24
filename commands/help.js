@@ -16,17 +16,17 @@ module.exports = {
         type: "template",
         payload: {
           template_type: "button",
-          text: `🤖 | These are the commands on Wie AI below.
+          text: `🤖 | These are the commands on lovely AI below.
 🔎 | Click every command to see the usage.`,
           buttons: [
             {
               type: "web_url",
-              url: "https://www.facebook.com/kennethfranciscoaceberos",
+              url: "https://www.facebook.com/profile.php?id=61554245590654",
               title: "Contact Admin 1"
             },
             {
               type: "web_url",
-              url: "https://www.facebook.com/wieginesalpocialechavez",
+              url: "https://www.facebook.com/profile.php?id=61554245590654",
               title: "Contact Admin 2"
             }
          ]
