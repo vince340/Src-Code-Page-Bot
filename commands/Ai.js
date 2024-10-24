@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = {
-  name: 'gpt4o',
+  name: 'Ai',
   description: 'Generate text using GPT-4o API',
   author: 'Carl John Villavito',
   async execute(senderId, args, pageAccessToken, sendMessage) {
@@ -23,7 +23,7 @@ module.exports = {
       const result = response.data.result;
 
       // Send the generated text to the user with proper concatenation
-      sendMessage(senderId, { text: "GPT4o BY CHATGPT:\n\n" + result }, pageAccessToken);
+      sendMessage(senderId, { text: "LOVELY AI:\n\n" + result }, pageAccessToken);
 
     } catch (error) {
       console.error('Error calling GPT-4o API:', error);
