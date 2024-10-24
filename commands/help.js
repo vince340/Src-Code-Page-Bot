@@ -15,7 +15,7 @@ module.exports = {
     });
 
     const totalCommands = commandFiles.length;
-    const helpMessage = `KYEA CMD LIST:\n➜TOTAL CMD: ${totalCommands} \n\n${commands.join('\n\n')}`;
+    const helpMessage = `LOVELY AI CMD LIST:\n➜TOTAL CMD: ${totalCommands} \n\n${commands.join('\n\n')}`;
 
     sendMessage(senderId, { text: helpMessage }, pageAccessToken);
   }
