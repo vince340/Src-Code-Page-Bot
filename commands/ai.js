@@ -14,7 +14,7 @@ module.exports = {
     }
 
     // Inform the user that content is being generated
-    sendMessage(senderId, { text: '🚨 wait 🚨.' }, pageAccessToken);
+    sendMessage(senderId, { text: '' }, pageAccessToken);
 
     try {
       const apiUrl = `https://joshweb.click/api/gpt-4o?q=${encodeURIComponent(prompt)}&uid=${senderId}`;
