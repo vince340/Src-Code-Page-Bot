@@ -1,10 +1,11 @@
 const axios = require('axios');
+const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
   name: 'ai',
   description: 'Generate text using GPT-4o API',
   author: 'Carl John Villavito',
-  async execute(senderId, args, pageAccessToken, sendMessage) {
+  async execute(senderId, args, pageAccessToken) {
     const prompt = args.join(' ');
 
     if (prompt === "") {
