@@ -37,7 +37,7 @@ module.exports = {
 
   formatResponse(data) {
     if (data.status) {
-      return `🗨️ | 𝙶𝙿𝚃-4𝚘\n・───────────・\n${data.response || 'No response provided.'}\n・──── >ᴗ< ────・`;
+      return `🗨️ | 𝙶𝙿𝚃 [㊗️] \n・───────────・\n${data.response || 'No response provided.'}\n・──── >ᴗ< ────・`;
     }
     return 'Error: Unable to fetch response.';
   },
