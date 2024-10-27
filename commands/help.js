@@ -2,62 +2,62 @@ const commandInfoMap = {
 	ai: {
 			name: "ai",
 			description: "AI Based on GPT-4",
-			guide: "%1ai what is life?"
+			guide: "ai what is life?"
 	},
 	alldl: {
 			name: "alldl",
 			description: "Download video content using links from Facebook, Instagram, Tiktok, Youtube, Twitter, and Spotify audio",
-			guide: "%1alldl [link]"
+			guide: "alldl [link]"
 	},
 	blackbox: {
 			name: "blackbox",
 			description: "An artificial Intelligence you can ask for anything.",
-			guide: "%1blackbox what is life?"
+			guide: "blackbox what is life?"
 	},
 	dalle: {
 			name: "dalle",
 			description: "Creates an image based on your imagination",
-			guide: "%1dalle cat with wings"
+			guide: "dalle cat with wings"
 	},
 	font: {
 			name: "font",
 			description: "Changes your font text",
-			guide: "%1font list\n%1font <font name> <text>"
+			guide: "font list\n%1font <font name> <text>"
 	},
 	join: {
 			name: "join",
 			description: "to join other existing gc",
-			guide: "chat %1join and reply number 1 to 5 in the list."
+			guide: "join and reply number 1 to 5 in the list."
 	},
 	gemini: {
 			name: "gemini",
 			description: "Google Gemini LLM",
-			guide: "%1gemini what is life?"
+			guide: "gemini what is life?"
 	},
 	gmage: {
 			name: "gmage",
 			description: "Search Google Images online",
-			guide: "%1gmage cat"
+			guide: "gmage cat"
 	},
 	help: {
 			name: "help",
 			description: "View all commands",
-			guide: "%1help\n%1help <command name>"
+			guide: "help\n%1help <command name>"
 	},
 	lyrics: {
 			name: "lyrics",
 			description: "Fetches lyrics of a song",
-			guide: "%1lyrics perfect by ed sheeran"
+			guide: "lyrics perfect by ed sheeran"
 	},
 	pinterest: {
 			name: "pinterest",
 			description: "Searches images on Pinterest",
-			guide: "%1pinterest cat -10"
+			guide: "pinterest cat -10"
 	},
 	prefix: {
 			name: "prefix",
 			description: "View some commands and shows bot's prefix",
-			guide: "%1prefix"
+			guide: "prefix"
 	},
 	remini: {
 			name: "remini",
@@ -72,12 +72,12 @@ const commandInfoMap = {
 	spotify: {
 			name: "spotify",
 			description: "Plays a song available on Spotify",
-			guide: "%1spotify perfect by ed sheeran"
+			guide: "spotify perfect by ed sheeran"
 	},
 	tempmail: {
 			name: "tempmail",
 			description: "Get Temporary Emails and its Inbox messages",
-			guide: "%1tempmail create\n%1tempmail inbox <email>"
+			guide: "tempmail create\n%1tempmail inbox <email>"
 	},
 	translate: {
 			name: "translate",
@@ -117,39 +117,39 @@ module.exports = {
 𝙰𝚟𝚊𝚒𝚕𝚊𝚋𝚕𝚎 𝙲𝚘𝚖𝚖𝚊𝚗𝚍𝚜:
 ╭─╼━━━━━━━━╾─╮
 │  📖 | 𝙴𝚍𝚞𝚌𝚊𝚝𝚒𝚘𝚗
-│ %1 Ai
-│ %1 Blackbox
-│ %1 Gemini
-│ %1 Translate
+│  Ai
+│  Blackbox
+│  Gemini
+│  Translate
 ╰─━━━━━━━━━╾─╯
 ╭─╼━━━━━━━━╾─╮
 │  🖼 | 𝙸𝚖𝚊𝚐𝚎
-│ %1 Dalle
-│ %1 Gmage
-│ %1 Pinterest
-│ %1 Remini
-│ %1 Removebg
+│  Dalle
+│  Gmage
+│  Pinterest
+│  Remini
+│  Removebg
 ╰─━━━━━━━━━╾─╯
 ╭─╼━━━━━━━━╾─╮
 │  🎧 | 𝙼𝚞𝚜𝚒𝚌
-│ %1 Lyrics
-│ %1 Spotify
+│  Lyrics
+│  Spotify
 ╰─━━━━━━━━━╾─╯
 ╭─╼━━━━━━━━╾─╮
 │  👥 | 𝙼𝚎𝚖𝚋𝚎𝚛𝚜
-│ %1 Alldl
-│ %1 Font
-│ %1 Join
-│ %1 Help
-│ %1 Prefix
-│ %1 Tempmail
-│ %1 Unsend
+│  Alldl
+│  Font
+│  Join
+│  Help
+│  Prefix
+│  Tempmail
+│  Unsend
 ╰─━━━━━━━━━╾─╯
-%1help <command name>
+help <command name>
 𝚃𝚘 𝚜𝚎𝚎 𝚑𝚘𝚠 𝚝𝚘 𝚞𝚜𝚎
 𝚝𝚑𝚎 𝚌𝚘𝚖𝚖𝚊𝚗𝚍𝚜.
 
-Example: %1help gemini
+Example: help gemini
 ━━━━━━━━━━━━━━━━`;
 
 					return message.reply(commandsList.replace(/%1/g, prefix));
