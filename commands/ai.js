@@ -26,7 +26,7 @@ function normalizeText(text) {
 }
 
 function formatResponse(content) {
-  const header = `🧋✨ | 𝙼𝚘𝚌𝚑𝚊 𝙰𝚒\n━━━━━━━━━━━━━━━━\n`;
+  const header = `👸| LOVELY AI\n━━━━━━━━━━━━━━━━\n`;
   const footer = `━━━━━━━━━━━━━━━━`;
   return `${header}${content.trim()}\n${footer}`;
 }
