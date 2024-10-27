@@ -5,7 +5,7 @@ const { sendMessage } = require('../handles/sendMessage');
 const token = fs.readFileSync('token.txt', 'utf8');
 
 module.exports = {
-  name: 'gpt',
+  name: 'ai',
   description: 'Interact with the GPT-4o API',
   usage: '-gpt4o [hello!]',
   author: 'coffee',
