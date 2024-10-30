@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = {
-  name: 'dewa',
+  name: 'imagine',
   description: 'Generate an image based on a text prompt using OpenAI.',
   author: 'ChatGPT',
 
