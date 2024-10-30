@@ -1,26 +1,51 @@
 const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
+// Define and export module
 module.exports = {
-  name: 'imagine',
-  description: 'Generates an image based on prompt',
-  author: '𝐌𝐀𝐑𝐉𝐇𝐔𝐍 𝐁𝐀𝐘𝐋𝐎𝐍',
+  // Metadata for the command
+  name: 'imagine,  // Command name
+  description: 'generates an image based on a prompt',  // Description
+  usage: 'draw [prompt]',  // Usage
+  author: 'MakoyQx',  // Author of the command
+
+  // Main function that executes the command
   async execute(senderId, args, pageAccessToken) {
-    if (!args || !Array.isArray(args) || args.length === 0) {
-      await sendMessage(senderId, { text: 'Please provide a prompt for image generation.' }, pageAccessToken);
-      return;
+    // Check if prompt arguments are provided
+    if (!args || args.length === 0) {
+      // Send message requesting a prompt if missing
+      await sendMessage(senderId, {
+        text: '❌ 𝗣𝗹𝗲𝗮𝘀𝗲 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝘆𝗼𝘂𝗿 𝗽𝗿𝗼𝗺𝗽𝘁\n\n𝗘𝘅𝗮𝗺𝗽𝗹𝗲: draw 𝗱𝗼𝗴.'
+      }, pageAccessToken);
+      return;  // Exit the function if no prompt is provided
     }
 
+    // Concatenate arguments to form the prompt
     const prompt = args.join(' ');
+    const apiUrl = `https://joshweb.click/api/art?prompt=${encodeURIComponent(prompt)}`;  // API endpoint with the prompt
+
+    // Notify user that the image is being generated
+    await sendMessage(senderId, { text: '⌛ 𝗚𝗲𝗻𝗲𝗿𝗮𝘁𝗶𝗻𝗴 𝗶𝗺𝗮𝗴𝗲 𝗯𝗮𝘀𝗲𝗱 𝗼𝗻 𝘆𝗼𝘂𝗿 𝗽𝗿𝗼𝗺𝗽𝘁, 𝗽𝗹𝗲𝗮𝘀𝗲 𝘄𝗮𝗶𝘁...' }, pageAccessToken);
 
     try {
-      const apiUrl = `https://ccprojectsjonellapis-production.up.railway.app/api/generate-art?prompt=${encodeURIComponent(prompt)}`;
-
-      await sendMessage(senderId, { attachment: { type: 'image', payload: { url: apiUrl } } }, pageAccessToken);
+      // Send the generated image to the user as an attachment
+      await sendMessage(senderId, {
+        attachment: {
+          type: 'image',
+          payload: {
+            url: apiUrl  // URL of the generated image
+          }
+        }
+      }, pageAccessToken);
 
     } catch (error) {
-      console.error('Error:', error);
-      await sendMessage(senderId, { text: 'Error: Could not generate image.' }, pageAccessToken);
+      // Handle and log any errors during image generation
+      console.error('Error generating image:', error);
+      
+      // Notify user of the error
+      await sendMessage(senderId, {
+        text: 'An error occurred while generating the image. Please try again later.'
+      }, pageAccessToken);
     }
   }
 };
