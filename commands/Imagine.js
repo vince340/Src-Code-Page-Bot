@@ -9,7 +9,7 @@ const token = fs.readFileSync('token.txt', 'utf8');
 const lastUsage = {};
 
 module.exports = {
-  name: 'draw',
+  name: 'imagine',
   description: 'Generate an AI-based image with a 2-minute cooldown',
   author: 'Tata',
   usage:'imagine dog',
