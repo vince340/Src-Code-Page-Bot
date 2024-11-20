@@ -13,7 +13,7 @@ module.exports = {
 
     try {
       const { data: { result } } = await axios.get(`https://joshweb.click/api/llama-3-70b?q=${encodeURIComponent(prompt)}`);
-      sendMessage(senderId, { text: result }, pageAccessToken)+`\n━━━━━━━━━━━━━━━━━━\n\nThis Ai is made by ICT students in Pau Excellencia Global Academy Foundation, Inc.(Pegafi)\n━━━━━━━━━━━━━━━━━━`;
+      sendMessage(senderId, { text: result }, pageAccessToken)+`\n━━━━━━━━━━━━━━━━━━\n\nThis Ai is made by fb community called ANIMÉ COMMUNITY TV.(kelvinHikaru)\n━━━━━━━━━━━━━━━━━━`;
     } catch {
       sendMessage(senderId, { text: 'There was an error generating the content. Please try again later.' }, pageAccessToken);
     }
