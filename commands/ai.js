@@ -38,13 +38,13 @@ const handleChatResponse = async (senderId, input, pageAccessToken) => {
     const { data } = await axios.get(apiUrl, { params: { question: input } });
     let response = data.response;
 
-    const responseTime = new Date().toLocaleString('en-US', { timeZone: 'Asia/Manila', hour12: true });
+    const responseTime = new Date().toLocaleString('en-US', { timeZone: 'Africa/congo', hour12: true });
 
     const answeringMessage = ``;
     const formattedAnsweringMessage = useFontFormatting ? formatResponse(answeringMessage) : answeringMessage;
     await sendMessage(senderId, { text: formattedAnsweringMessage }, pageAccessToken);
 
-    const defaultMessage = `👸• lovely
+    const defaultMessage = `👸• lovely AI 👸
 ━━━━━━━━━━━━━━
 ❓Your Question: ${input}
 ━━━━━━━━━━━━━━
@@ -52,7 +52,7 @@ const handleChatResponse = async (senderId, input, pageAccessToken) => {
 ━━━━━━━━━━━━━━
 ⏰ Response: ${responseTime}
 
-📤 Message Developer : m.me/kelvinHikaru`;
+📤 Message Developer :m.me/kelvinHikaru`;
 
     const formattedMessage = useFontFormatting ? formatResponse(defaultMessage) : defaultMessage;
 
