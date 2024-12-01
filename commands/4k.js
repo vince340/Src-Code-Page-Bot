@@ -2,7 +2,7 @@ const axios = require("axios");
 const { sendMessage } = require("../handles/sendMessage");
 
 module.exports = {
-  name: "enhance",
+  name: "4k",
   description: "Enhance Your Picture",
   author: "developer",
   usage: "Send any picture first then reply enhance",
