@@ -22,7 +22,7 @@ module.exports = {
     }
 
     if (query === "Kinsay nag himo nimo?" || query === "who created you?") {
-      const jokeMessage = "Jay Ar";
+      const jokeMessage = "kelvin Hikaru ";
       const formattedMessage = useFontFormatting ? formatResponse(jokeMessage) : jokeMessage;
       return await sendMessage(senderId, { text: formattedMessage }, pageAccessToken);
     }
@@ -44,7 +44,7 @@ const handleChatResponse = async (senderId, input, pageAccessToken) => {
     const formattedAnsweringMessage = useFontFormatting ? formatResponse(answeringMessage) : answeringMessage;
     await sendMessage(senderId, { text: formattedAnsweringMessage }, pageAccessToken);
 
-    const defaultMessage = `🤖 • JayChat
+    const defaultMessage = `👸 • LOVELY AI
 ━━━━━━━━━━━━━━
 ❓Your Question: ${input}
 ━━━━━━━━━━━━━━
@@ -52,7 +52,7 @@ const handleChatResponse = async (senderId, input, pageAccessToken) => {
 ━━━━━━━━━━━━━━
 ⏰ Response: ${responseTime}
 
-📤 Message Developer : m.me/JayCantFinddd`;
+📤 Message Developer :m.me/kelvinHikaru`;
 
     const formattedMessage = useFontFormatting ? formatResponse(defaultMessage) : defaultMessage;
 
