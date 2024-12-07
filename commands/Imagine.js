@@ -1,62 +1,29 @@
 const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
-const fs = require('fs');
-
-// Lecture du token d'accès pour l'envoi des messages
-const token = fs.readFileSync('token.txt', 'utf8');
-
-// Dictionnaire pour suivre le dernier horodatage de chaque utilisateur
-const lastUsage = {};
 
 module.exports = {
-  name: 'imagine',
-  description: 'Generate an AI-based image with a 2-minute cooldown',
-  author: 'Tata',
-  usage:'imagine dog',
+  name: 'Imagine',
+  description: 'Generate an image using Flux Realism API.',
+  usage: '-flux [image prompt]',
+  author: 'coffee',
 
-  async execute(senderId, args) {
-    const pageAccessToken = token;
+  async execute(senderId, args, pageAccessToken) {
     const prompt = args.join(' ').trim();
+    if (!prompt) return sendMessage(senderId, { text: 'Provide an image prompt.' }, pageAccessToken);
 
-    // Vérifie que l'utilisateur a bien entré une commande
-    if (!prompt) {
-      return await sendMessage(senderId, { text: 'Please provide a prompt for the image generator.' }, pageAccessToken);
-    }
-
-    // Vérifier l'intervalle de 2 minutes pour cet utilisateur
-    const currentTime = Date.now();
-    const cooldownPeriod = 2 * 60 * 1000; // 2 minutes en millisecondes
-
-    if (lastUsage[senderId] && currentTime - lastUsage[senderId] < cooldownPeriod) {
-      const remainingTime = Math.ceil((cooldownPeriod - (currentTime - lastUsage[senderId])) / 1000);
-      return await sendMessage(senderId, { text: `Please wait ${remainingTime} seconds before using this command again.` }, pageAccessToken);
-    }
-
-    // Mettre à jour le dernier horodatage d'utilisation de la commande
-    lastUsage[senderId] = currentTime;
+    const apiUrl = `https://api.kenliejugarap.com/flux-realism/?prompt=${encodeURIComponent(prompt)}`;
 
     try {
-      sendMessage(senderId, { text: 'Generation de l image en cours...🤩' }, pageAccessToken);
-      // Appel à l'API pour générer l'image
-      const apiUrl = `https://ccprojectapis.ddns.net/api/blackbox/gen?prompt=${encodeURIComponent(prompt)}`;
       const response = await axios.get(apiUrl);
-      const data = response.data;
-
-      // Extraire l'URL de l'image de la réponse
-      const imageUrlMatch = data.response.match(/\((https:\/\/[^\)]+)\)/);
-      const imageUrl = imageUrlMatch ? imageUrlMatch[1] : null;
-
-      if (imageUrl) {
-        await sendMessage(senderId, {
-          attachment: { type: 'image', payload: { url: imageUrl } }
-        }, pageAccessToken);
+      if (response.data.status) {
+        const imgUrl = response.data.response;
+        await sendMessage(senderId, { attachment: { type: 'image', payload: { url: imgUrl } } }, pageAccessToken);
       } else {
-        await sendMessage(senderId, { text: `Failed to generate image. Please try a different prompt.` }, pageAccessToken);
+        sendMessage(senderId, { text: 'Failed to generate image using Flux Realism API.' }, pageAccessToken);
       }
-
     } catch (error) {
-      console.error('Error:', error);
-      await sendMessage(senderId, { text: 'Error: Unexpected error while generating image.' }, pageAccessToken);
+      console.error('Error generating image:', error);
+      sendMessage(senderId, { text: 'An error occurred while generating the image.' }, pageAccessToken);
     }
   }
 };
