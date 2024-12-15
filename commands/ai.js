@@ -44,7 +44,7 @@ const handleChatResponse = async (senderId, input, pageAccessToken) => {
     const formattedAnsweringMessage = useFontFormatting ? formatResponse(answeringMessage) : answeringMessage;
     await sendMessage(senderId, { text: formattedAnsweringMessage }, pageAccessToken);
 
-    const defaultMessage = `Free GPT / OpenAI
+    const defaultMessage = `LOVELY_AI 👸
 
 👸|LOVELY_AI
 ✅ Answer: ${response}
