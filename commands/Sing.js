@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 module.exports = {
-  name: 'ytmp4',
+  name: 'sing',
   description: 'Search Youtube Song And Download!',
   author: 'Dale Mekumi', 
   usage: 'ytmp3 songtitle',
