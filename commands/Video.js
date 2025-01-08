@@ -4,7 +4,7 @@ const fs = require('fs');
 const token = fs.readFileSync('token.txt', 'utf8');
 
 module.exports = {
-  name: 'pinayflix',
+  name: 'video',
   description: 'Search for video from PinayFlix',
   usage: 'pinaysearch <search title>',
   author: 'Rized',
