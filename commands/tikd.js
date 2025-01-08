@@ -2,7 +2,7 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'tikdownload',
+  name: 'tikd',
   usage: 'tikdownload <url>',
   description: 'Download a TikTok video from the provided URL.',
   author: 'Jerome',
