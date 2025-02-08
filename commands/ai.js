@@ -46,10 +46,8 @@ const handleChatResponse = async (senderId, input, pageAccessToken) => {
 
     const defaultMessage = `𝗟𝗢𝗩𝗘𝗟𝗬-𝗔𝗜
 
-🔥|𝗟𝗢𝗩𝗘𝗟𝗬-𝗔𝗜 👸
-✅ 𝗔𝗻𝘀𝘄𝗲𝗿: ${response}
-▬▭▬ ▬▭▬✧▬▭▬ ▬▭▬
-⏰ Response: ${responseTime}`;
+🤖 𝗟𝗢𝗩𝗘𝗟𝗬-𝗔𝗜 👸
+ ${response}`;
 
     const formattedMessage = useFontFormatting ? formatResponse(defaultMessage) : defaultMessage;
 
