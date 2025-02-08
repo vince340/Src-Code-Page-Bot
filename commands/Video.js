@@ -2,7 +2,7 @@ const axios = require('axios');
 const { sendMessage } = require('../handles/sendMessage');
 
 module.exports = {
-  name: 'ytsearch',
+  name: 'video',
   description: 'Search YouTube videos.',
   usage: 'ytsearch [video URL atau search query]',
   author: 'Your Name',
