@@ -5,7 +5,7 @@ const fs = require('fs');
 const token = fs.readFileSync('token.txt', 'utf8');
 
 module.exports = {
-  name: 'audio',
+  name: 'sing',
   description: 'Search YouTube audio and send audio',
   author: 'Tata',
 
