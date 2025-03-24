@@ -12,7 +12,7 @@ module.exports = {
     }
 
     try {
-      const response = await axios.get(`https://kaiz-apis.gleeze.com/api/ytsearch?q=${encodeURIComponent(args.join(' '))}`);
+      const response = await axios.get(`https://kaiz-apis.gleeze.com/api/video?query=${encodeURIComponent(args.join(' '))}`);
       const data = response.data;
 
       if (data.error) {
