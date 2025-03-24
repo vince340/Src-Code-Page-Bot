@@ -15,7 +15,7 @@ module.exports = {
     }
 
     const query = args.join(' ');
-    const apiUrl = `https://dlvc.vercel.app/yt-audio?search=${encodeURIComponent(query)}`;
+    const apiUrl = `https://kaiz-apis.gleeze.com/api/ytsearch?q=${encodeURIComponent(query)}`;
 
     try {
       const response = await axios.get(apiUrl);
