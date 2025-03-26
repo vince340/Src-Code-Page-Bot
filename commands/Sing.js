@@ -21,7 +21,7 @@ module.exports = {
 
     try {
       // Recherche de vidéos YouTube en fonction de l'entrée utilisateur
-      const searchResponse = await axios.get(`https://me0xn4hy3i.execute-api.us-east-1.amazonaws.com/staging/api/resolve/resolveYoutubeSearch?search=${encodeURIComponent(query)}`);
+      const searchResponse = await axios.get(`https://kaiz-apis.gleeze.com/api/ytsearch?q=search=${encodeURIComponent(query)}`);
       const videos = searchResponse.data.data;
 
       if (!videos || videos.length === 0) {
