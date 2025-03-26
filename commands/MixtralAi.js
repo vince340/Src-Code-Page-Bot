@@ -17,7 +17,7 @@ module.exports = {
 
     try {
       await sendMessage(senderId, { text: 'Generating a response...' }, pageAccessToken);
-      const response = await axios.get(`https://www.geo-sevent-tooldph.site/api/mixtral?prompt=${encodeURIComponent(modifiedPrompt)}`);
+      const response = await axios.get(`https://kaiz-apis.gleeze.com/api/mixtral-8x22b?q=q&uid=${encodeURIComponent(modifiedPrompt)}`);
       const data = response.data;
       const formattedMessage = `・──🤖MixtralAi🤖──・\n${data.response}\n・──── >ᴗ< ────・`;
       await sendMessage(senderId, { text: 'Admin: https://www.facebook.com/share/15dWdAx4QK/?mibextid=qi2Omg' }, pageAccessToken);
