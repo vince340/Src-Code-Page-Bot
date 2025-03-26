@@ -17,7 +17,7 @@ module.exports = {
       sendMessage(senderId, { text: "🤳 | Searching, please wait..." }, pageAccessToken);
 
       
-      const response = await axios.get(`https://markdevs69v2-679r.onrender.com/new/api/tiksearch?search=${encodeURIComponent(searchQuery)}`);
+      const response = await axios.get(`https://kaiz-apis.gleeze.com/api/tiksearch?search=${encodeURIComponent(searchQuery)}`);
 
       const videos = response.data.data.videos;
 
