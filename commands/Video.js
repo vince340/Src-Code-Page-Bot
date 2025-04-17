@@ -28,7 +28,7 @@ module.exports = {
       
       
       
-       const responses = await axios.get(`https://downloader.iyot.plus/ytdl?url=${url}&type=mp3`);
+       const responses = await axios.get(`https://kaiz-apis.gleeze.com/api/video?query=${url}&type=mp3`);
       const dlink = responses.data.download;
      // const url = info.url;
 
