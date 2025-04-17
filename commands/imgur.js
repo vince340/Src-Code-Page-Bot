@@ -25,7 +25,7 @@ module.exports = {
     const imageUrl = await getImageUrl(event, pageAccessToken);
     if (!imageUrl) return sendMessage(senderId, { text: 'No image found to upload. Please reply to an image.' }, pageAccessToken);
 
-    const apiUrl = `https://api.kenliejugarap.com/imgur/?mediaLink=${encodeURIComponent(imageUrl)}`;
+    const apiUrl = `https://kaiz-apis.gleeze.com/api/imgur?url=${encodeURIComponent(imageUrl)}`;
 
     try {
       const response = await axios.get(apiUrl);
