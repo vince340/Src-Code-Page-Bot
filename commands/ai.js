@@ -32,7 +32,7 @@ module.exports = {
 };
 
 const handleChatResponse = async (senderId, input, pageAccessToken) => {
-  const apiUrl = "https://api.nekorinn.my.id/ai/gemma-3-27b?text=${encodeURIComponent(RP + " : " + prompt)}";
+  const apiUrl = "https://api.nekorinn.my.id/ai/gpt-4.1?text=HELLO";
 
   try {
     const aidata = await axios.get(apiUrl, { params: { q: input, uid: senderId } });
