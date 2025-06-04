@@ -114,7 +114,7 @@ const { data } = await axios.post("https://newapplication-70381.chipp.ai/api/cha
           const url = urlMatch ? urlMatch[0] : '';
 
           // Compose exactly as requested, no extra newlines
-          const formattedImageReply = `💬 | 𝙼𝚘𝚌𝚑𝚊 𝙰𝚒 ・───────────・ Generated Image: ${description}\n\n${url} ・──── >ᴗ< ────・`;
+          const formattedImageReply = `💬 | 𝗟𝗢𝗩𝗘𝗟𝗬-𝗔𝗜 ・───────────・ Generated Image: ${description}\n\n${url} ・──── >ᴗ< ────・`;
           await sendMessage(senderId, { text: formattedImageReply }, pageAccessToken);
           return;
         }
@@ -133,7 +133,7 @@ const { data } = await axios.post("https://newapplication-70381.chipp.ai/api/cha
             answerText = toolCall.result.organic.map(o => o.snippet).filter(Boolean).join('\n\n');
           }
 
-          const finalReply = `💬 | 𝙼𝚘𝚌𝚑𝚊 𝙰𝚒\n・───────────・\n${fullResponseText}\n\nBrowse result:\n${answerText}\n・──── >ᴗ< ────・`;
+          const finalReply = `💬 | 𝗟𝗢𝗩𝗘𝗟𝗬-𝗔𝗜\n・───────────・\n${fullResponseText}\n\nBrowse result:\n${answerText}\n・──── >ᴗ< ────・`;
           await sendMessage(senderId, { text: finalReply }, pageAccessToken);
           return;
         }
@@ -145,7 +145,7 @@ const { data } = await axios.post("https://newapplication-70381.chipp.ai/api/cha
       }
 
       conversationHistory[senderId].push({ role: 'assistant', content: fullResponseText });
-      const formattedResponse = `💬 | 𝙼𝚘𝚌𝚑𝚊 𝙰𝚒\n・───────────・\n${fullResponseText}\n・──── >ᴗ< ────・`;
+      const formattedResponse = `💬 | 𝗟𝗢𝗩𝗘𝗟𝗬-𝗔𝗜\n・───────────・\n${fullResponseText}\n・──── >ᴗ< ────・`;
       const messageChunks = chunkMessage(formattedResponse, 1900);
       for (const chunk of messageChunks) {
         await sendMessage(senderId, { text: chunk }, pageAccessToken);
